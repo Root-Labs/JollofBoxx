@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/frontEnd/pages/Home/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">JollofBox</a>
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <ul class="nav">
+        <li> <a href="#">About</a></li>
+        <li> <a href="#">Box Office</a></li>
+        <li> <a href="#">Movies/Series</a></li>
+      </ul>
+    </header>
+    <div class="banner">
+      <div class="content the-little-mermaid active">
+        <img src="/frontEnd/assets/little-mermaid.png" alt="movie-title" class="movie-title" />
+        <h4>
+          <span>2023</span><span><i>2+</i></span
+          ><span>2h 30min</span>
+        </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iste inventore ad laborum alias autem adipisci sequi
+             iusto. Minima ad quaerat numquam dolorem, odit cumque 
+             tempore fuga quas! Cum, aut error?
+        </p>
+        <div class="button">
+          <a href="#">watch</a>
+          <a href="#">myList</a>
+        </div>
+      </div>
+      <div class="content the-covenant">
+        <img src="/frontEnd/assets/the-covenant-title.png" alt="movie-title" class="movie-title" />
+        <h4>
+          <span>2023</span><span><i>2+</i></span
+          ><span>2h 30min</span>
+        </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iste inventore ad laborum alias autem adipisci sequi
+             iusto. Minima ad quaerat numquam dolorem, odit cumque 
+             tempore fuga quas! Cum, aut error?
+        </p>
+        <div class="button">
+          <a href="#">watch</a>
+          <a href="#">myList</a>
+        </div>
+      </div>
+      <div class="content the-black-demon">
+        <img src="/frontEnd/assets/the-black-demon-title.png" alt="movie-title" class="movie-title" />
+        <h4>
+          <span>2023</span><span><i>2+</i></span
+          ><span>2h 30min</span>
+        </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iste inventore ad laborum alias autem adipisci sequi
+             iusto. Minima ad quaerat numquam dolorem, odit cumque 
+             tempore fuga quas! Cum, aut error?
+        </p>
+        <div class="button">
+          <a href="#">watch</a>
+          <a href="#">myList</a>
+        </div>
+      </div>
+      <div class="content the-tank">
+        <img src="/frontEnd/assets/the-tank-title.png" alt="movie-title" class="movie-title" />
+        <h4>
+          <span>2023</span><span><i>2+</i></span
+          ><span>2h 30min</span>
+        </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iste inventore ad laborum alias autem adipisci sequi
+             iusto. Minima ad quaerat numquam dolorem, odit cumque 
+             tempore fuga quas! Cum, aut error?
+        </p>
+        <div class="button">
+          <a href="#">watch</a>
+          <a href="#">myList</a>
+        </div>
+      </div>
+      <div class="content bg-65">
+        <img src="/frontEnd/assets/the-65-title.png" alt="movie-title" class="movie-title" />
+        <h4>
+          <span>2023</span><span><i>2+</i></span
+          ><span>2h 30min</span>
+        </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iste inventore ad laborum alias autem adipisci sequi
+             iusto. Minima ad quaerat numquam dolorem, odit cumque 
+             tempore fuga quas! Cum, aut error?
+        </p>
+        <div class="button">
+          <a href="#">watch</a>
+          <a href="#">myList</a>
+        </div>
+      </div>
+      <div class="carousel-box">
+        <div class="carousel">
+          <div class="carousel-item" onclick="changeBg('bg-little-mermaid.jpg', 'the-little-mermaid')">
+            <img src="/frontEnd/assets/movies/the-little-mermaid.jpeg" alt=""/> 
+          </div>
+          <div class="carousel-item" onclick="changeBg('bg-the-covenant.jpeg', 'the-covenant')">
+            <img src="/frontEnd/assets/movies/the-covenant.jpg" alt="" /> 
+          </div>
+          <div class="carousel-item" onclick="changeBg('bg-the-black-demon.jpeg', 'the-black-demon')">
+            <img src="/frontEnd/assets/movies/the-black-demon.jpg" alt="" /> 
+          </div>
+          <div class="carousel-item" onclick="changeBg('bg-the-tank.jpeg', 'the-tank')">
+            <img src="/frontEnd/assets/movies/the-tank.jpeg" alt="" /> 
+          </div>
+          <div class="carousel-item" onclick="changeBg('bg-65.jpeg', 'bg-65')">
+            <img src="/frontEnd/assets/movies/65.jpg" alt="" /> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script.js"></script>
+     <script>
+        $(document).ready(function(){
+          $('.carousel').carousel();
+        });
+     </script>
+  </body>
+</html>
