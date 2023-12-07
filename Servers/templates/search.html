@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <form method="POST">{% csrf_token %}
+            <div class="input-con">
+                <input type="search" placeholder="search" class="input" name="search">
+                <input type="submit" value="Search" class="submit">
+            </div>
+        </form>
+
+    </nav>
+
+    <main>
+        <h1>Search Results</h1>
+
+        <div id="set">
+            {% if film == "movies" %}
+
+                {% for result in results %}
+                <a href="{% url 'movies' title=result.title %}" class="movie-con">
+                    <div class="movie-poster">
+                        <img class="poster" src="{{ result.poster }}">
+                    </div>
+                    <div class="name-con">
+                        <text class="movie-name">{{ result.title }}</text>
+                    </div>    
+                </a>       
+                {% endfor %}
+
+            {% elif film == "series" %}
+                {% for result in results %}
+                <a href="{% url 'series' title=result.title %}" class="movie-con">
+                    <div class="movie-poster">
+                        <img class="poster" src="{{ result.poster }}">
+                    </div>
+                    <div class="name-con">
+                        <text class="movie-name">{{ result.title }}</text>
+                    </div>    
+                </a>       
+                {% endfor %}
+
+            {% endif %}
+        </div>
+    </main>
+    
+</body>
+</html>

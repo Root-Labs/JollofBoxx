@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <form method="POST">{% csrf_token %}
+            <div class="input-con">
+                <select name="film">
+                    <option value="movies">Movie</option>
+                    <option value="series">Tv Series</option>
+                </select>
+                <input type="search" placeholder="search" class="input" name="search">
+                <input type="submit" value="Search" class="submit">
+            </div>
+        </form>
+
+    </nav>
+
+    <main>
+        <h1>Movies</h1>
+        <div id="set">
+            {% for movie in movies %}
+            <a href="{% url 'movies' title=movie.title %}" class="movie-con">
+                <div class="movie-poster">
+                    <img class="poster" src="{{ movie.poster }}">
+                </div>
+                <div class="name-con">
+                    <text class="movie-name">{{ movie.title }}</text>
+                </div>    
+            </a>       
+            {% endfor %}
+        </div>
+
+        <h1>TVseries</h1>
+        <div id="set">
+            {% for serie in series %}
+            <a href="{% url 'series' title=serie.title %}" class="movie-con">
+                <div class="movie-poster">
+                    <img class="poster" src="{{ serie.poster }}">
+                </div>
+                <div class="name-con">
+                    <text class="movie-name">{{ serie.title }}</text>
+                </div>    
+            </a>       
+
+            {% endfor %}
+        </div>
+    </main>
+    
+</body>
+</html>

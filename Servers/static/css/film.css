@@ -1,0 +1,270 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: rgb(20, 19, 19);
+    color: white;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(9, 113, 9);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav-con{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#logo{
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-con{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#input-box{
+    padding: 5px;
+    border-style: none;
+    width: 70%;
+}
+
+#submit{
+    background-color: black;
+    color: white;
+    border-style: none;
+    padding: 5px;
+    width: 30%;
+}
+
+select{
+    width: 100%;
+    background-color: white;
+}
+
+
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+#intro{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#poster{
+    width: 30%;
+}
+
+#poster img{
+    width: 100%;
+    height: 100%;
+}
+
+#film-info{
+    width: 65%;
+}
+
+#title{
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.sum{
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+#share-links{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.share-link{
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    width: 15%;
+}
+
+#yt{
+    margin-top: 30px;
+    width: 100%;
+    height: 400px;
+}
+
+#yt iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.label{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+#sub-info{
+    margin-top: 30px;
+}
+
+.info{
+    margin-top: 20px;
+}
+
+#download{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#download-btn{
+    width: 60%;
+    background-color: black;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    color: white;
+}
+
+footer{
+    background-color: rgb(9, 113, 9);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#facebook{
+    background-color: #1877F2;
+}
+
+#reddit{
+    background-color: #FF5700;
+}
+
+#twitter{
+    background-color: black;
+}
+
+#whatsapp{
+    background-color: #075E54;
+}
+
+#email{
+    background-color: rgb(27, 25, 25);
+}
+
+.star-rating{
+    font-size: 15px;
+    color: orange;
+}
+
+
+#contents{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.s-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-bottom-style: none;
+    margin-bottom: 10px;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.s-link div{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link{
+    color: white;
+    width: 80%;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#rating{
+    width: 25%;
+}
+
+@media screen and (max-width: 1000px) {
+    form{
+        width: 60%;
+    }
+
+    #main{
+        width: 95%;
+    }
+
+    #intro{
+        flex-direction: column;
+    }
+
+    #poster{
+        width: 100%;
+    }
+
+    #movie-info{
+        width: 100%;
+    }
+}
