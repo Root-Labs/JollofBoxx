@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://www.wealthorigin.online/static/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/search.css'%}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>{{ search }}</title>
+</head>
+<body>
+    <nav id="top-nav">
+        <div id="nav-con">
+            <a id="navctrl">&#9776;</a>
+            <text id="logo">Jollof<text id="logo2">Box</text></text>
+
+            <div id="nav-links">
+                <a href="{% url 'home' %}" class="nav-links">Home</a>
+                <a href="{% url 'home' %}" class="nav-links">Movies</a>
+                <a href="{% url 'home' %}" class="nav-links">Series</a>
+                <a href="{% url 'home' %}" class="nav-links">Support</a>
+                <a href="{% url 'home' %}" class="nav-links">Advertise</a>
+                <a href="{% url 'home' %}" class="nav-links">Contact</a>
+            </div>
+            
+            <form id="nav-form" method="POST">{% csrf_token %}
+                <div id="form-con">
+                    <input id="input-box" type="text" placeholder="Search" required name="search"/>
+                    <button type="submit" id="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>       
+            </form> 
+        </div>
+    </nav>
+
+    <div id="main">
+        <div id="SideNav">
+            <form id="mobile-nav" method="POST">{% csrf_token %}
+                <div id="form-con">
+                    <input id="input-box" type="text" placeholder="Search" required name="search"/>
+                    <button type="submit" id="submit">
+                        <center><i class="fa-solid fa-magnifying-glass"></i></center>
+                    </button>
+                </div>     
+            </form>    
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-house"></i>&nbsp;&nbsp;Home</a>
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-video"></i>&nbsp;&nbsp;Movies</a>
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-film"></i>&nbsp;&nbsp;Tv Series</a>
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-hand-holding-dollar"></i>&nbsp;&nbsp;Support Us</a>
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-bullhorn"></i>&nbsp;&nbsp;Advertise</a>
+            <a href="{% url 'home' %}"><i class="fa-solid icon fa-headset"></i>&nbsp;&nbsp;Contact</a>   
+        </div>
+        
+        <div id="main2">
+            <div id="main3">
+                <h1>Search Results</h1>
+
+                <div id="result-list">
+                    {% if results %}
+                        {% for result in results %}          
+                            {% if result.film == "series" %}
+                                <a href="{% url 'series' title=result.title %}" class="film">
+                            {% elif result.film == "movie" %}
+                                <a href="{% url 'movies' title=result.title %}" class="film">
+                            {% endif %}
+                
+                                    <div class="poster">
+                                        <img src="{{ result.poster }}">
+                                    </div>
+                                    <div id="title">
+                                        <h4 class="title">{{ result.title }}</h4>
+                                        <text>{{result.release_date}}</text><br><text class="rating">{{result.rating}}<i class="fa rating-icon fa-star" aria-hidden="true"></i></text>
+                                    </div>
+                                </a>
+                        {% endfor %}
+                    {% else %}
+                        <h3>Nothing found for "{{ search }}".</h3>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <text id="logo">Jollof<text id="logo2">Box</text></text>
+
+        <div id="footer-con">
+            <div class="footer-box">
+                <h3>Links</h3>
+                <span class="line" style="background-color: rgb(226, 43, 80)"></span>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Support Us</a>
+                <a href="#" class="footer-link">Advertise</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Social Media</h3>
+                <span class="line" style="background-color: rgb(43, 144, 226)"></span>
+                <a href="#" class="footer-link">Facebook</a>
+                <a href="#" class="footer-link">X</a>
+                <a href="#" class="footer-link">Telegram</a>
+                <a href="#" class="footer-link">Instagram</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Resources</h3>
+                <span class="line" style="background-color: rgb(43, 226, 116)"></span>
+                <a href="#" class="footer-link">Terms & Conditions</a>
+                <a href="#" class="footer-link">Disclaimer</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+        </div>
+        <hr style="width: 99%;">
+        <text>©2021 - JOLLOFBOX</text>
+    </footer>
+</body>
+</html>
